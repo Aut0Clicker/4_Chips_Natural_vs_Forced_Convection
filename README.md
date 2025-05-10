@@ -2,8 +2,7 @@
 
 Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is installed in an enclosure whose walls and air are maintained at a temperature of $T_{sur} = T_{\infty} = 25^\circ\text{C}$. The chips have an emissivity of $\epsilon = 0.60$ and a maximum allowable temperature of $T_s = 85^\circ\text{C}$.
 
-![image](https://github.com/user-attachments/assets/0bcac1bc-c5a3-4496-bba6-341f23ef1d41)
-
+![image](https://github.com/user-attachments/assets/a85c6e9e-d908-4831-a4c5-ab6a4b0f23f3)
 
 **(a)** If heat is rejected from the chips by radiation and natural convection, what is the maximum operating power of each chip? The convection coefficient depends on the chip-to-air temperature difference and may be approximated as $h = C(T_s - T_{\infty})^{1/4}$, where $C = 4.2 \text{ W/m}^2 \cdot \text{K}^{5/4}$.
 
@@ -61,7 +60,9 @@ Answers:
 * **(a) Maximum Power (Natural Convection + Radiation): $\approx 0.8927 \text{ W}$**
 * **(b) Maximum Power (Forced Convection + Radiation): $\approx 13.7615 \text{ W}$**
 
-![image](https://github.com/user-attachments/assets/3488b04a-a2ad-4b54-b5e6-6696f23d9ec1)
+![image](https://github.com/user-attachments/assets/58e113a0-f84e-4d79-90f5-95ca80047f2e)
 
-![image](https://github.com/user-attachments/assets/20584e14-3ba6-4004-a051-d9db77e4c5cc)
+
+![image](https://github.com/user-attachments/assets/8350925c-6929-4fd5-a57e-ead12c9befc0)
+
 
