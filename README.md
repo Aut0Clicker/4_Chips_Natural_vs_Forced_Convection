@@ -60,5 +60,7 @@ Answers:
 * **(a) Maximum Power (Natural Convection + Radiation): $\approx 0.8927 \text{ W}$**
 * **(b) Maximum Power (Forced Convection + Radiation): $\approx 13.7615 \text{ W}$**
 
+![image](https://github.com/user-attachments/assets/3488b04a-a2ad-4b54-b5e6-6696f23d9ec1)
 
-![[FFF.png]]![[FFF2.png]]
+![image](https://github.com/user-attachments/assets/20584e14-3ba6-4004-a051-d9db77e4c5cc)
+
