@@ -10,7 +10,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 
 **Parameters Used:**
 
-* **$A$ (Top Surface Area):** $0.0009 \text{ m}^2$ (Calculated: 4 $\cdot$ 0.015<sup>2</sup>)
+* **$A$ (Top Surface Area):** $0.0009 \text{ m}^2 = 4 \cdot  (0.015 m)^2$
 * **$T_s$ (Chip Surface Temp.):** $358 \text{ K}$ (Given, from $85^\circ\text{C}$)
 * **$T_{\infty}, T_{sur}$ (Surrounding Temp.):** $298 \text{ K}$ (Given, from $25^\circ\text{C}$)
 * **$\Delta T$ (Temp. Difference):** $60 \text{ K}$ (Calculated: $T_s - T_{\infty}$)
@@ -18,8 +18,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 * **$\sigma$ (Stefan-Boltzmann Const.):** $5.67 \times 10^{-8} \text{ W/m}^2\text{K}^4$ (Given)
 * **$C$ (Nat. Conv. Formula Const.):** $4.2 \text{ W/m}^2\text{K}^{5/4}$ (Given)
 * **$h_{nat}$ (Nat. Conv. Coeff.):** 
-    * **Formula:** $h_{nat} = C(T_s - T_{\infty})^{1/4}$
-    * **Calculation:** $h_{nat} = (4.2 \text{ W/m}^2\text{K}^{5/4}) \cdot (60 \text{ K})^{1/4} \approx 4.2 \cdot 2.78316 \approx 11.6893 \text{ W/m}^2\text{K}$
+    $h_{nat} = C(T_s - T_{\infty})^{1/4} = (4.2 \text{ W/m}^2\text{K}^{5/4}) \cdot (60 \text{ K})^{1/4} \approx 4.2 \cdot 2.78316 \approx 11.6893 \text{ W/m}^2\text{K}$
 * **$h_{forced}$ (Forced Conv. Coeff.):** $250 \text{ W/m}^2\text{K}$ (Given)
 
 ---
