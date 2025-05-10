@@ -22,7 +22,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 * **$h_{forced}$ (Forced Conv. Coeff.):** $250 \text{ W/m}^2\text{K}$ (Given)
 
 ---
-
+### Analytical Solution
 **Part (a): Maximum Power with Natural Convection and Radiation**
 
 1.  **Natural Convection Heat Transfer ($q_{conv,nat}$):**
@@ -58,6 +58,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 Answers:
 * **(a) Maximum Power (Natural Convection + Radiation): $\approx 0.8927 \text{ W}$**
 * **(b) Maximum Power (Forced Convection + Radiation): $\approx 13.7615 \text{ W}$**
+### Ansys Fluent Solution
 
 ![image](https://github.com/user-attachments/assets/58e113a0-f84e-4d79-90f5-95ca80047f2e)
 
