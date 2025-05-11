@@ -135,8 +135,8 @@ TALK ABOUT MESHING
 
 ![image](https://github.com/user-attachments/assets/4f21d403-98b3-416a-a1d7-1889d36d51ea)
 
-
-**1. Essential Parameters & Calculations:**
+### Laminar floor proof for case a)
+**Parameters**
 * Surface Temperature, $T_s = 358\text{K}$; Ambient Temperature, $T_{\infty} = 298\text{K}$; Temperature Difference, $\Delta T = 60\text{K}$.
 * Film Temperature, $T_f = (T_s + T_{\infty})/2 = 328 \text{ K}$.
 * Air properties at $T_f \approx 328 \text{ K}$:
@@ -152,7 +152,30 @@ TALK ABOUT MESHING
 * **Rayleigh Number ($Ra_L$):**
     $Ra_L = Gr_L \cdot Pr = (1.713 \times 10^4) \cdot (0.707) \approx 1.211 \times 10^4$
 
-**2. Conclusion:**
 The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. This value falls within the established range for laminar flow ($10^4 < 1.21 \times 10^4 < 10^7$).
 
 
+### Calculation for Input Velocity in Forced Convection for case b)
+1.  **Empirical Correlation for Nusselt Number:**
+    For laminar flow over a flat plate (our case), the average Nusselt number is:
+    $$Nu_L = 0.664 \cdot Re_L^{1/2} \cdot Pr^{1/3}$$
+    where:
+    * $Re_L$ is the Reynolds number based on the plate length $L$.
+    * $Pr$ is the Prandtl number of the fluid (air).
+
+2.  **Definition of Nusselt Number from Heat Transfer Coefficient ($h$):**
+    The Nusselt number can also be defined as:
+    $$Nu_L = \frac{h \cdot L}{k}$$
+    where:
+    * $h$ is the convective heat transfer coefficient.
+    * $L$ is the characteristic length (in this case, the side of the chip).
+    * $k$ is the thermal conductivity of the air.
+
+3.  **Equating and Substituting Reynolds Number:**
+    By equating the two expressions for $Nu_L$ and substituting the Reynolds number $Re_L = \frac{\rho \cdot v \cdot L}{\mu} = \frac{v \cdot L}{\nu}$ (where $\nu = \mu / \rho$ is the kinematic viscosity):
+    $$\frac{h \cdot L}{k} = 0.664 \cdot \left(\frac{v \cdot L}{\nu}\right)^{1/2} \cdot Pr^{1/3}$$
+
+4.  **Solving for Velocity ($v$):**
+    Rearranging the equation to solve for $v$ yields the governing equation for our calculation:
+    $$v = \frac{\nu}{L} \cdot \left(\frac{h \cdot L}{k \cdot 0.664 \cdot Pr^{1/3}}\right)^2$$
+$$v = \frac{1.8746 \times 10^{-5} \text{ m}^2/\text{s}}{0.015 \text{ m}} \cdot \left(\frac{250 \text{ W/m}^2\text{K} \cdot 0.015 \text{ m}}{0.0283 \text{ W/(m}\cdot\text{K)} \cdot 0.664 \cdot (0.706)^{1/3}}\right)^2 \approx 62.90 \text{ m/s}$$
