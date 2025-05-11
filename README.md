@@ -51,6 +51,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 
 6.  **Total Maximum Power for Part (b) ($P_b$):**
     $P_b = q_{conv,forced} + q_{rad}$
+
     $P_b = 13.5 \text{ W} + 0.2615 \text{ W} \approx \mathbf{13.7615 \text{ W}}$
 
 ---
