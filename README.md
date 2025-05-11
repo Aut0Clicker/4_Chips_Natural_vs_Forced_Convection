@@ -34,7 +34,9 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
     $q_{rad} = (0.60) \cdot (0.0009 \text{ m}^2) \cdot (5.67 \times 10^{-8} \text{ W/m}^2\text{K}^4) \cdot ((358 \text{ K})^4 - (298 \text{ K})^4) \approx 0.2615 \text{ W}$
 
 3.  **Total Maximum Power for Part (a) ($P_a$):**
+
     $P_a = q_{conv,nat} + q_{rad}$
+
     $P_a = 0.6312 \text{ W} + 0.2615 \text{ W} \approx \mathbf{0.8927 \text{ W}}$
 
 ---
@@ -49,7 +51,8 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
     (Value from Part (a), Step 2, as it depends on the same parameters)
     $q_{rad} \approx 0.2615 \text{ W}$
 
-6.  **Total Maximum Power for Part (b) ($P_b$):**
+6.  **Total Maximum Power for Part (b) ($P_b$):
+
     $P_b = q_{conv,forced} + q_{rad}$
 
     $P_b = 13.5 \text{ W} + 0.2615 \text{ W} \approx \mathbf{13.7615 \text{ W}}$
