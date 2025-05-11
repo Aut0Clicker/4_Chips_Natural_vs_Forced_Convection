@@ -61,36 +61,57 @@ Answers:
 ### Ansys Fluent Solution
 
 
-**General Physical Assumptions (Common to Both Cases):**
 
-* **Steady-State:** The thermal conditions and flow field do not change over time.
-* **3D Geometry:** A simplified 3D representation of the chips and enclosure was used.
-* **Diffuse Gray Surfaces:** Chip surfaces were treated as diffuse gray emitters for radiation ($\epsilon = 0.6$).
-* **Constant Chip Temperature:** The chip surface was maintained at a uniform $T_s = 85^\circ\text{C}$.
-* **Constant Enclosure Temperature:** Enclosure walls and ambient air were at a uniform $T_{sur} = T_{\infty} = 25^\circ\text{C}$.
-* **Material Properties:** Standard properties for air and aluminum (default) were used.
+**General Setup (Both Cases)**
 
-  
+* **Solver:** Steady-state.
+* **Energy Equation:** Enabled for heat transfer.
+* **Mesh:** Checked for quality (orthogonal quality, aspect ratio).
 
-**Case A: Natural Convection & Radiation - Specific Physical Assumptions:**
+---
 
-* **Buoyancy-Driven Flow:** Air movement is primarily caused by density differences due to temperature gradients.
-* **Non-zero Gravity:** Gravitational acceleration was included in the model.
-* **Temperature-Dependent Air Density:** Air density varied with temperature (e.g., incompressible ideal gas law) to model natural convection currents.
-* **Laminar Flow:** The airflow regime was assumed to be laminar, justified by an expected low Rayleigh number for the Buoyancy-Driven Flow. The 
-* **Open Boundaries:** Pressure inlet/outlet conditions simulated an open environment allowing natural air circulation.
+**Case A: Natural Convection & Radiation**
+
+* **Core Idea:** Buoyancy-driven airflow and surface radiation.
+* **Models:**
+    * **Viscous:** Laminar.
+    * **Radiation:** Surface-to-Surface (S2S) model (view factors computed).
+    * **Gravity:** Enabled (-9.81 m/s² in Y).
+* **Materials & Cell Zones:**
+    * **Air:** Density set to "incompressible ideal gas" (for buoyancy).
+    * **Chips (Aluminum):** Fixed temperature of 358.15 K (85°C).
+* **Boundary Conditions :**
+    * **Inlet/Outlet (Bottom/Top):** Pressure Inlet/Outlet (0 Pa gauge), 298.15 K (25°C), radiation emissivity 1 (simulating open environment).
+    * **Enclosure Walls:** Adiabatic, radiation emissivity 1.
+    * **Chip Sides/Back:** Adiabatic, excluded from radiation.
+    * **Chip Top Surface (Fluid Walls):** Coupled thermal condition, radiation emissivity 0.6.
+* **Solver Settings:**
+    * **Coupling:** Uncoupled.
+    * **Discretization:** Presto (Pressure), Second Order Upwind (Momentum, Energy).
+    * **Pseudo Time Step:** Enabled.
+    * **Operating Conditions:** Variable density parameter enabled.
+* **Results Highlights:**
+    * Velocity contours (natural convection patterns).
+    * Surface Heat Transfer Coefficient (on chip tops).
+    * Flux reports (total and radiative heat transfer).
+
+---
+
+**Case B: Forced Convection & Radiation**
+
+* **Core Idea:** Fan-driven airflow (dominant) and surface radiation.
+* **Models (Changes from Case A):**
+    * **Viscous:** Realizable k-epsilon (turbulent) with Enhanced Wall Treatment.
+    * **Gravity:** Disabled.
+* **Materials & Cell Zones (Changes from Case A):**
+    * **Air:** Density set to "constant."
+* **Boundary Conditions (Changes from Case A):**
+    * **Inlet (Bottom):** Changed to Velocity Inlet (to simulate fan).
+* **Radiation Model:** S2S model remained active (view factors recomputed).
+* **Results Highlights:** (Similar types of visualizations as Case A, but reflecting forced convection effects).
 
 
 
-
-
-**Case B: Forced Convection & Radiation - Specific Physical Assumptions:**
-
-* **Fan-Driven Flow:** Air movement is primarily caused by an external fan.
-* **Negligible Buoyancy :** Effects of gravity and natural buoyancy may be considered secondary to the forced flow.
-* **Constant Air Density :** Air density could be assumed constant if temperature variations' impact on density is minor compared to fan effects.
-* **Turbulent Flow:** The airflow regime was assumed to be turbulent due to higher velocities induced by the fan (e.g., k-epsilon model).
-* **Defined Inlet Velocity:** A specific velocity profile was defined at an inlet boundary to represent the fan's airflow.
 
 
 
