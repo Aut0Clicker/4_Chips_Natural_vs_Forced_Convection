@@ -26,12 +26,15 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 **Part (a): Maximum Power with Natural Convection and Radiation**
 
 1.  **Natural Convection Heat Transfer ($q_{conv,nat}$):**
+
     $q_{conv,nat} = h_{nat} \cdot A \cdot \Delta T$
 
     $q_{conv,nat} = (11.6893 \text{ W/m}^2\text{K}) \cdot (0.0009 \text{ m}^2) \cdot (60 \text{ K}) \approx 0.6312 \text{ W}$
 
 2.  **Radiation Heat Transfer ($q_{rad}$):**
+
     $q_{rad} = \epsilon \cdot A \cdot \sigma \cdot (T_s^4 - T_{sur}^4)$
+
     $q_{rad} = (0.60) \cdot (0.0009 \text{ m}^2) \cdot (5.67 \times 10^{-8} \text{ W/m}^2\text{K}^4) \cdot ((358 \text{ K})^4 - (298 \text{ K})^4) \approx 0.2615 \text{ W}$
 
 3.  **Total Maximum Power for Part (a) ($P_a$):**
@@ -47,6 +50,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 4.  **Forced Convection Heat Transfer ($q_{conv,forced}$):
 
     $q_{conv,forced} = h_{forced} \cdot A \cdot \Delta T$
+
     $q_{conv,forced} = (250 \text{ W/m}^2\text{K}) \cdot (0.0009 \text{ m}^2) \cdot (60 \text{ K}) = 13.5 \text{ W}$
 
 6.  **Radiation Heat Transfer ($q_{rad}$):**
