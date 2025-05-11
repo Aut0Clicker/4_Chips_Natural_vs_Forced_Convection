@@ -27,6 +27,7 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 
 1.  **Natural Convection Heat Transfer ($q_{conv,nat}$):**
     $q_{conv,nat} = h_{nat} \cdot A \cdot \Delta T$
+
     $q_{conv,nat} = (11.6893 \text{ W/m}^2\text{K}) \cdot (0.0009 \text{ m}^2) \cdot (60 \text{ K}) \approx 0.6312 \text{ W}$
 
 2.  **Radiation Heat Transfer ($q_{rad}$):**
@@ -43,15 +44,16 @@ Chips of width $L = 15 \text{ mm}$ on a side are mounted to a substrate that is 
 
 **Part (b): Maximum Power with Forced Convection and Radiation**
 
-4.  **Forced Convection Heat Transfer ($q_{conv,forced}$):**
+4.  **Forced Convection Heat Transfer ($q_{conv,forced}$):
+
     $q_{conv,forced} = h_{forced} \cdot A \cdot \Delta T$
     $q_{conv,forced} = (250 \text{ W/m}^2\text{K}) \cdot (0.0009 \text{ m}^2) \cdot (60 \text{ K}) = 13.5 \text{ W}$
 
-5.  **Radiation Heat Transfer ($q_{rad}$):**
+6.  **Radiation Heat Transfer ($q_{rad}$):**
     (Value from Part (a), Step 2, as it depends on the same parameters)
     $q_{rad} \approx 0.2615 \text{ W}$
 
-6.  **Total Maximum Power for Part (b) ($P_b$):
+7.  **Total Maximum Power for Part (b) ($P_b$):
 
     $P_b = q_{conv,forced} + q_{rad}$
 
