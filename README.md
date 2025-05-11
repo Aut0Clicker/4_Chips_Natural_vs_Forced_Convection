@@ -75,46 +75,45 @@ Answers:
 **Case A: Natural Convection & Radiation - Specific Physical Assumptions:**
 
 * **Buoyancy-Driven Flow:** Air movement is primarily caused by density differences due to temperature gradients.
-
-* **Gravity Enabled:** Gravitational acceleration was included in the model.
-
+* **Non-zero Gravity:** Gravitational acceleration was included in the model.
 * **Temperature-Dependent Air Density:** Air density varied with temperature (e.g., incompressible ideal gas law) to model natural convection currents.
-
 * **Laminar Flow:** The airflow regime was assumed to be laminar, justified by an expected low Grashof number.
-
 * **Open Boundaries:** Pressure inlet/outlet conditions simulated an open environment allowing natural air circulation.
 
-  
+### Justification for Laminar Flow Assumption (Rayleigh Number) - Concise
+
+To justify assuming laminar flow for natural convection (Part a), we evaluate the Rayleigh number ($Ra_L$). For a heated horizontal plate facing upwards, laminar flow is typically observed when $10^4 < Ra_L < 10^7$.
+
+**1. Essential Parameters & Calculations:**
+* Surface Temperature, $T_s = 358\text{K}$; Ambient Temperature, $T_{\infty} = 298\text{K}$; Temperature Difference, $\Delta T = 60\text{K}$.
+* Film Temperature, $T_f = (T_s + T_{\infty})/2 = 328 \text{ K}$.
+* Air properties at $T_f \approx 328 \text{ K}$:
+    * Coefficient of thermal expansion, $\beta \approx 0.003049 \text{ K}^{-1}$
+    * Kinematic viscosity, $\nu \approx 1.88 \times 10^{-5} \text{ m}^2/\text{s}$
+    * Prandtl number, $Pr \approx 0.707$
+
+* **Grashof Number ($Gr_L$):**
+    $Gr_L = \frac{g \beta \Delta T L^3}{\nu^2} = \frac{(9.81) \cdot (0.003049) \cdot (60) \cdot (0.015)^3}{(1.88 \times 10^{-5})^2} \approx 1.713 \times 10^4$
+
+* **Rayleigh Number ($Ra_L$):**
+    $Ra_L = Gr_L \cdot Pr = (1.713 \times 10^4) \cdot (0.707) \approx 1.211 \times 10^4$
+
+**2. Conclusion:**
+The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. Since this value falls within the established range for laminar flow ($10^4 < 1.21 \times 10^4 < 10^7$), the assumption of laminar flow for the natural convection scenario is justified.
+
+
+
+
 
 **Case B: Forced Convection & Radiation - Specific Physical Assumptions:**
 
 * **Fan-Driven Flow:** Air movement is primarily caused by an external fan.
-
-* **Negligible Buoyancy (Potentially):** Effects of gravity and natural buoyancy may be considered secondary to the forced flow.
-
-* **Constant Air Density (Potentially):** Air density could be assumed constant if temperature variations' impact on density is minor compared to fan effects.
-
+* **Negligible Buoyancy :** Effects of gravity and natural buoyancy may be considered secondary to the forced flow.
+* **Constant Air Density :** Air density could be assumed constant if temperature variations' impact on density is minor compared to fan effects.
 * **Turbulent Flow:** The airflow regime was assumed to be turbulent due to higher velocities induced by the fan (e.g., k-epsilon model).
-
 * **Defined Inlet Velocity:** A specific velocity profile was defined at an inlet boundary to represent the fan's airflow.
 
-  
 
-**Results Comparison & Visualization:**
-
-  
-
-The analytical calculations provide estimates for the maximum operating power:
-
-* **Natural Convection + Radiation (Analytical):** $P_a \approx 0.8927 \text{ W}$
-
-* **Forced Convection + Radiation (Analytical):** $P_b \approx 13.7615 \text{ W}$
-
-  
-
-The Ansys Fluent simulations would provide detailed flow and temperature fields and allow for the calculation of convective and radiative heat transfer rates from the chip surfaces. These simulated heat transfer rates can then be summed to determine the maximum operating power for each case. A direct comparison between the analytical and Fluent results would typically be made to validate the simulation setup and assumptions.
-
-  
 
 *(The images below likely represent visualizations from the Ansys Fluent simulation, such as temperature contours or heat flux vectors, illustrating the thermal performance under the simulated conditions.)*
 
