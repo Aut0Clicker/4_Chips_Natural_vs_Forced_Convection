@@ -87,7 +87,9 @@ Answers:
     * **Chip Top Surface (Fluid Walls):** Coupled thermal condition, radiation emissivity 0.6.
 * **Solver Settings:**
     * **Coupling:** Uncoupled.
-    * **Discretization:** Presto (Pressure), Second Order Upwind (Momentum, Energy).
+    * **Discretization:** 
+	    * Presto (Pressure), Presto provides more accurate buoyancy-driven flows like natural convection
+	    * Second Order Upwind (Momentum, Energy).
 
 
 
@@ -95,7 +97,7 @@ Answers:
 
 **Case B: Forced Convection & Radiation (Changes from Case A)**
 
-* **Core Idea:** Fan-driven airflow (dominant) and surface radiation.
+* **Core Idea:** Fan-driven airflow  and surface radiation.
 * **Models :**
     * **Viscous:** Realizable k-epsilon (turbulent) with Enhanced Wall Treatment.
     * **Gravity:** Disabled.
