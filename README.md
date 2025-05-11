@@ -62,11 +62,22 @@ Answers:
 
 
 
+
+TALK ABOUT SPACECLAIM
+
+
+
+
+TALK ABOUT MESHING
+
+
+
+
 **General Setup (Both Cases)**
 
 * **Solver:** Steady-state.
 * **Energy Equation:** Enabled for heat transfer.
-* **Mesh:** Checked for quality (orthogonal quality, aspect ratio).
+* **Mesh:** Inflation was used to improve the mesh near the boundary between the chips and the air, and the mesh at the boundaries 
 
 ---
 
@@ -99,12 +110,14 @@ Answers:
 
 * **Core Idea:** Fan-driven airflow  and surface radiation.
 * **Models :**
-    * **Viscous:** Realizable k-epsilon (turbulent) with Enhanced Wall Treatment.
-    * **Gravity:** Disabled.
+    * **Viscous:** Realizable k-epsilon (turbulent) with Enhanced Wall Treatment (better for forced convection).
+    * **Gravity:** Disabled as it is negligible.
 * **Materials & Cell Zones:**
     * **Air:** Density set to "constant." 
 * **Boundary Conditions :**
     * **Inlet (Bottom):** Changed to Velocity Inlet (to simulate fan).
+* **Solver Settings:**
+    * **Discretization:** All second order upwind
 
 
 
@@ -141,3 +154,5 @@ Answers:
 
 **2. Conclusion:**
 The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. This value falls within the established range for laminar flow ($10^4 < 1.21 \times 10^4 < 10^7$).
+
+
