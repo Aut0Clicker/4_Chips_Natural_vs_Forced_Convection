@@ -67,17 +67,19 @@ TALK ABOUT SPACECLAIM
 
 
 
-
-TALK ABOUT MESHING
-
-
-
-
 **General Setup (Both Cases)**
 
 * **Solver:** Steady-state.
-* **Energy Equation:** Enabled for heat transfer.
 * **Mesh:** Inflation was used to improve the mesh near the boundary between the chips and the air, and the mesh at the boundaries 
+* **Mesh sizing for chips**
+    - Element Size: **1 mm**
+- **Mesh sizing for the enclosure:**
+    - Maximum Element Size: **6 mm**
+    - Growth Rate: **1.05** (smoother transition)
+	- **Inflation Layers on fluid domain walls:**
+	    - Number of Layers (Maximum): **5 layers**
+	    - Transition Type: **Smooth Transition** 
+
 
 ---
 
@@ -86,6 +88,7 @@ TALK ABOUT MESHING
 * **Core Idea:** Buoyancy-driven airflow and surface radiation.
 * **Models:**
     * **Viscous:** Laminar (Based on Rayleigh number calculations in the appendix).
+    * **Energy Equation ON**
     * **Radiation:** Surface-to-Surface (S2S) model.
     * **Gravity:** Enabled (-9.81 m/s² in Y).
 * **Materials & Cell Zones:**
@@ -99,9 +102,8 @@ TALK ABOUT MESHING
 * **Solver Settings:**
     * **Coupling:** Uncoupled.
     * **Discretization:** 
-	    * Presto (Pressure), Presto provides more accurate buoyancy-driven flows like natural convection
+	    * Presto (Pressure), Presto provides more accurate results for buoyancy-driven flows like natural convection
 	    * Second Order Upwind (Momentum, Energy).
-
 
 
 ---
@@ -118,8 +120,6 @@ TALK ABOUT MESHING
     * **Inlet (Bottom):** Changed to Velocity Inlet (to simulate fan).
 * **Solver Settings:**
     * **Discretization:** All second order upwind
-
-
 
 
 
@@ -145,10 +145,8 @@ TALK ABOUT MESHING
     * Prandtl number, $Pr \approx 0.707$
 * Characteristic Length (chip side), $L = 0.015 \text{ m}$.
 * Gravitational acceleration, $g = 9.81 \text{ m/s}^2$.
-
 * **Grashof Number ($Gr_L$):**
     $Gr_L = \frac{g \beta \Delta T L^3}{\nu^2} = \frac{(9.81) \cdot (0.003049) \cdot (60) \cdot (0.015)^3}{(1.88 \times 10^{-5})^2} \approx 1.713 \times 10^4$
-
 * **Rayleigh Number ($Ra_L$):**
     $Ra_L = Gr_L \cdot Pr = (1.713 \times 10^4) \cdot (0.707) \approx 1.211 \times 10^4$
 
@@ -173,9 +171,11 @@ The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. This value fa
 
 3.  **Equating and Substituting Reynolds Number:**
     By equating the two expressions for $Nu_L$ and substituting the Reynolds number $Re_L = \frac{\rho \cdot v \cdot L}{\mu} = \frac{v \cdot L}{\nu}$ (where $\nu = \mu / \rho$ is the kinematic viscosity):
+    
     $$\frac{h \cdot L}{k} = 0.664 \cdot \left(\frac{v \cdot L}{\nu}\right)^{1/2} \cdot Pr^{1/3}$$
 
 4.  **Solving for Velocity ($v$):**
     Rearranging the equation to solve for $v$ yields the governing equation for our calculation:
-    $$v = \frac{\nu}{L} \cdot \left(\frac{h \cdot L}{k \cdot 0.664 \cdot Pr^{1/3}}\right)^2$$
+    $$v = \frac{\nu}{L} \cdot \left(\frac{h \cdot L}{k \cdot 0.664 \cdot Pr^{1/3}}\right)^2 ,$$
 $$v = \frac{1.8746 \times 10^{-5} \text{ m}^2/\text{s}}{0.015 \text{ m}} \cdot \left(\frac{250 \text{ W/m}^2\text{K} \cdot 0.015 \text{ m}}{0.0283 \text{ W/(m}\cdot\text{K)} \cdot 0.664 \cdot (0.706)^{1/3}}\right)^2 \approx 62.90 \text{ m/s}$$
+
