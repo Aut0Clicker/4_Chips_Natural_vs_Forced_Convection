@@ -60,10 +60,68 @@ Answers:
 * **(b) Maximum Power (Forced Convection + Radiation): $\approx 13.7615 \text{ W}$**
 ### Ansys Fluent Solution
 
+
+**General Physical Assumptions (Common to Both Cases):**
+
+* **Steady-State:** The thermal conditions and flow field do not change over time.
+* **3D Geometry:** A simplified 3D representation of the chips and enclosure was used.
+* **Diffuse Gray Surfaces:** Chip surfaces were treated as diffuse gray emitters for radiation ($\epsilon = 0.6$).
+* **Constant Chip Temperature:** The chip surface was maintained at a uniform $T_s = 85^\circ\text{C}$.
+* **Constant Enclosure Temperature:** Enclosure walls and ambient air were at a uniform $T_{sur} = T_{\infty} = 25^\circ\text{C}$.
+* **Material Properties:** Standard properties for air and aluminum (default) were used.
+
+  
+
+**Case A: Natural Convection & Radiation - Specific Physical Assumptions:**
+
+* **Buoyancy-Driven Flow:** Air movement is primarily caused by density differences due to temperature gradients.
+
+* **Gravity Enabled:** Gravitational acceleration was included in the model.
+
+* **Temperature-Dependent Air Density:** Air density varied with temperature (e.g., incompressible ideal gas law) to model natural convection currents.
+
+* **Laminar Flow:** The airflow regime was assumed to be laminar, justified by an expected low Grashof number.
+
+* **Open Boundaries:** Pressure inlet/outlet conditions simulated an open environment allowing natural air circulation.
+
+  
+
+**Case B: Forced Convection & Radiation - Specific Physical Assumptions:**
+
+* **Fan-Driven Flow:** Air movement is primarily caused by an external fan.
+
+* **Negligible Buoyancy (Potentially):** Effects of gravity and natural buoyancy may be considered secondary to the forced flow.
+
+* **Constant Air Density (Potentially):** Air density could be assumed constant if temperature variations' impact on density is minor compared to fan effects.
+
+* **Turbulent Flow:** The airflow regime was assumed to be turbulent due to higher velocities induced by the fan (e.g., k-epsilon model).
+
+* **Defined Inlet Velocity:** A specific velocity profile was defined at an inlet boundary to represent the fan's airflow.
+
+  
+
+**Results Comparison & Visualization:**
+
+  
+
+The analytical calculations provide estimates for the maximum operating power:
+
+* **Natural Convection + Radiation (Analytical):** $P_a \approx 0.8927 \text{ W}$
+
+* **Forced Convection + Radiation (Analytical):** $P_b \approx 13.7615 \text{ W}$
+
+  
+
+The Ansys Fluent simulations would provide detailed flow and temperature fields and allow for the calculation of convective and radiative heat transfer rates from the chip surfaces. These simulated heat transfer rates can then be summed to determine the maximum operating power for each case. A direct comparison between the analytical and Fluent results would typically be made to validate the simulation setup and assumptions.
+
+  
+
+*(The images below likely represent visualizations from the Ansys Fluent simulation, such as temperature contours or heat flux vectors, illustrating the thermal performance under the simulated conditions.)*
+
+  
+
 ![image](https://github.com/user-attachments/assets/58e113a0-f84e-4d79-90f5-95ca80047f2e)
 
+  
 
 ![image](https://github.com/user-attachments/assets/4f21d403-98b3-416a-a1d7-1889d36d51ea)
-
-
-
