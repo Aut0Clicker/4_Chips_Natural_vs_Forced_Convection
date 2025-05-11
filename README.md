@@ -74,8 +74,8 @@ Answers:
 
 * **Core Idea:** Buoyancy-driven airflow and surface radiation.
 * **Models:**
-    * **Viscous:** Laminar.
-    * **Radiation:** Surface-to-Surface (S2S) model (view factors computed).
+    * **Viscous:** Laminar (Based on Rayleigh number calculations in the appendix).
+    * **Radiation:** Surface-to-Surface (S2S) model.
     * **Gravity:** Enabled (-9.81 m/s² in Y).
 * **Materials & Cell Zones:**
     * **Air:** Density set to "incompressible ideal gas" (for buoyancy).
@@ -88,27 +88,22 @@ Answers:
 * **Solver Settings:**
     * **Coupling:** Uncoupled.
     * **Discretization:** Presto (Pressure), Second Order Upwind (Momentum, Energy).
-    * **Pseudo Time Step:** Enabled.
-    * **Operating Conditions:** Variable density parameter enabled.
-* **Results Highlights:**
-    * Velocity contours (natural convection patterns).
-    * Surface Heat Transfer Coefficient (on chip tops).
-    * Flux reports (total and radiative heat transfer).
+
+
 
 ---
 
-**Case B: Forced Convection & Radiation**
+**Case B: Forced Convection & Radiation (Changes from Case A)**
 
 * **Core Idea:** Fan-driven airflow (dominant) and surface radiation.
-* **Models (Changes from Case A):**
+* **Models :**
     * **Viscous:** Realizable k-epsilon (turbulent) with Enhanced Wall Treatment.
     * **Gravity:** Disabled.
-* **Materials & Cell Zones (Changes from Case A):**
-    * **Air:** Density set to "constant."
-* **Boundary Conditions (Changes from Case A):**
+* **Materials & Cell Zones:**
+    * **Air:** Density set to "constant." 
+* **Boundary Conditions :**
     * **Inlet (Bottom):** Changed to Velocity Inlet (to simulate fan).
-* **Radiation Model:** S2S model remained active (view factors recomputed).
-* **Results Highlights:** (Similar types of visualizations as Case A, but reflecting forced convection effects).
+
 
 
 
