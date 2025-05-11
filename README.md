@@ -77,29 +77,8 @@ Answers:
 * **Buoyancy-Driven Flow:** Air movement is primarily caused by density differences due to temperature gradients.
 * **Non-zero Gravity:** Gravitational acceleration was included in the model.
 * **Temperature-Dependent Air Density:** Air density varied with temperature (e.g., incompressible ideal gas law) to model natural convection currents.
-* **Laminar Flow:** The airflow regime was assumed to be laminar, justified by an expected low Grashof number.
+* **Laminar Flow:** The airflow regime was assumed to be laminar, justified by an expected low Rayleigh number for the Buoyancy-Driven Flow. The 
 * **Open Boundaries:** Pressure inlet/outlet conditions simulated an open environment allowing natural air circulation.
-
-### Justification for Laminar Flow Assumption (Rayleigh Number) - Concise
-
-To justify assuming laminar flow for natural convection (Part a), we evaluate the Rayleigh number ($Ra_L$). For a heated horizontal plate facing upwards, laminar flow is typically observed when $10^4 < Ra_L < 10^7$.
-
-**1. Essential Parameters & Calculations:**
-* Surface Temperature, $T_s = 358\text{K}$; Ambient Temperature, $T_{\infty} = 298\text{K}$; Temperature Difference, $\Delta T = 60\text{K}$.
-* Film Temperature, $T_f = (T_s + T_{\infty})/2 = 328 \text{ K}$.
-* Air properties at $T_f \approx 328 \text{ K}$:
-    * Coefficient of thermal expansion, $\beta \approx 0.003049 \text{ K}^{-1}$
-    * Kinematic viscosity, $\nu \approx 1.88 \times 10^{-5} \text{ m}^2/\text{s}$
-    * Prandtl number, $Pr \approx 0.707$
-
-* **Grashof Number ($Gr_L$):**
-    $Gr_L = \frac{g \beta \Delta T L^3}{\nu^2} = \frac{(9.81) \cdot (0.003049) \cdot (60) \cdot (0.015)^3}{(1.88 \times 10^{-5})^2} \approx 1.713 \times 10^4$
-
-* **Rayleigh Number ($Ra_L$):**
-    $Ra_L = Gr_L \cdot Pr = (1.713 \times 10^4) \cdot (0.707) \approx 1.211 \times 10^4$
-
-**2. Conclusion:**
-The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. Since this value falls within the established range for laminar flow ($10^4 < 1.21 \times 10^4 < 10^7$), the assumption of laminar flow for the natural convection scenario is justified.
 
 
 
@@ -124,3 +103,23 @@ The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. Since this va
   
 
 ![image](https://github.com/user-attachments/assets/4f21d403-98b3-416a-a1d7-1889d36d51ea)
+
+
+**1. Essential Parameters & Calculations:**
+* Surface Temperature, $T_s = 358\text{K}$; Ambient Temperature, $T_{\infty} = 298\text{K}$; Temperature Difference, $\Delta T = 60\text{K}$.
+* Film Temperature, $T_f = (T_s + T_{\infty})/2 = 328 \text{ K}$.
+* Air properties at $T_f \approx 328 \text{ K}$:
+    * Coefficient of thermal expansion, $\beta \approx 0.003049 \text{ K}^{-1}$
+    * Kinematic viscosity, $\nu \approx 1.88 \times 10^{-5} \text{ m}^2/\text{s}$
+    * Prandtl number, $Pr \approx 0.707$
+* Characteristic Length (chip side), $L = 0.015 \text{ m}$.
+* Gravitational acceleration, $g = 9.81 \text{ m/s}^2$.
+
+* **Grashof Number ($Gr_L$):**
+    $Gr_L = \frac{g \beta \Delta T L^3}{\nu^2} = \frac{(9.81) \cdot (0.003049) \cdot (60) \cdot (0.015)^3}{(1.88 \times 10^{-5})^2} \approx 1.713 \times 10^4$
+
+* **Rayleigh Number ($Ra_L$):**
+    $Ra_L = Gr_L \cdot Pr = (1.713 \times 10^4) \cdot (0.707) \approx 1.211 \times 10^4$
+
+**2. Conclusion:**
+The calculated Rayleigh number is $Ra_L \approx 1.21 \times 10^4$. This value falls within the established range for laminar flow ($10^4 < 1.21 \times 10^4 < 10^7$).
